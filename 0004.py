@@ -6,4 +6,7 @@ def main():
             if s == s[::-1]:
                 f.append(int(s))
     print(max(f))
-main()
+
+
+if __name__ == "__main__":
+    main()

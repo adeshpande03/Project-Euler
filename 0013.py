@@ -102,4 +102,7 @@ def main():
     """
     s = sum([int(i) for i in s.split()])
     print(str(s)[:10])
-main()
+
+
+if __name__ == "__main__":
+    main()

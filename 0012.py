@@ -2,7 +2,6 @@ import math
 from functools import cache
 
 
-
 def getDiv(n):
     f = set()
     for i in range(1, math.isqrt(n) + 1):
@@ -20,4 +19,5 @@ def main():
             break
 
 
-main()
+if __name__ == "__main__":
+    main()

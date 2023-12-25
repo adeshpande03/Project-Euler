@@ -6,4 +6,6 @@ def main(n):
             c += i
     print(c)
 
-main(1000)
+
+if __name__ == "__main__":
+    main(1000)
