@@ -1,5 +1,5 @@
 import math
-import functools
+from functools import cache, lru_cache
 
 
 def getDiv(n):
@@ -41,7 +41,7 @@ def listPrimes(maxNum):
     return l[:-1]
 
 
-@functools.cache
+@cache
 def collatz(n):
     if n == 0:
         return 0
@@ -137,3 +137,20 @@ def createSpiral(n):
 def isPali(numOrString):
     s = str(numOrString)
     return s == s[::-1]
+
+
+def listOfNumsToInt(listOfIntsOrStrings):
+    res = int("".join(map(str, listOfIntsOrStrings)))
+    return res
+
+
+def generateTriangularList(listLen):
+    return [n * (n + 1) // 2 for n in range(1, listLen + 1)]
+
+
+def generatePentagonalList(listLen):
+    return [((3 * n - 1) * n) // 2 for n in range(1, listLen)]
+
+
+def generateHexagonallList(listLen):
+    return [((2 * n - 1) * n) for n in range(1, listLen)]
