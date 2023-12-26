@@ -132,3 +132,8 @@ def createSpiral(n):
         )
         num -= 1
     return spiral
+
+
+def isPali(numOrString):
+    s = str(numOrString)
+    return s == s[::-1]
