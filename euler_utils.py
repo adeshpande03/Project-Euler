@@ -2,7 +2,13 @@ import math
 from functools import cache, lru_cache
 
 
+@cache
 def getDiv(n):
+    """Returns a list of divisors of n as a sorted list (does not include n)
+
+    Returns:
+        list:  divisors of n as a sorted list (does not include n)
+    """
     f = set()
     for i in range(1, math.isqrt(n) + 1):
         if n % i == 0:
@@ -12,6 +18,15 @@ def getDiv(n):
 
 
 def isPrime(num):
+    """checks if num is prime
+
+    Args:
+        num (int): num to be checked
+
+    Returns:
+        bool: True if num is prime, False if not
+    """
+
     if num < 2 or num % 2 == 0:
         return num == 2
     divisor = 3
@@ -24,6 +39,14 @@ def isPrime(num):
 
 
 def findNextPrime(num):
+    """_summary_
+
+    Args:
+        num (int): a starting number to find the next prime from
+
+    Returns:
+        int: prime after num
+    """
     if num < 2:
         return 2
     if num % 2 == 0:
@@ -35,6 +58,14 @@ def findNextPrime(num):
 
 
 def listPrimes(maxNum):
+    """lists primes until maxNum
+
+    Args:
+        maxNum (int): max num to bind the largest prime generated
+
+    Returns:
+        list: list of primes <= maxNum
+    """
     l = [2]
     while l[-1] < maxNum:
         l.append(findNextPrime(l[-1]))
