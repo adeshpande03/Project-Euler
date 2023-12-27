@@ -185,3 +185,86 @@ def generatePentagonalList(listLen):
 
 def generateHexagonallList(listLen):
     return [((2 * n - 1) * n) for n in range(1, listLen)]
+
+
+def listPrimes2(num):
+    """Sieve of Eratosthenes from geeksforgeeks
+
+    Args:
+        num (int): num that binds primes[-1]
+
+    Returns:
+        list: list of primes less than num
+    """
+    prime = [True for i in range(num + 1)]
+    p = 2
+    primes = []
+    while p * p <= num:
+        if prime[p] == True:
+            for i in range(p * p, num + 1, p):
+                prime[i] = False
+        p += 1
+    for p in range(2, num + 1):
+        if prime[p]:
+            primes.append(p)
+    return primes
+
+
+def pokerSort(rank):
+    order = "23456789TJQKA"
+    return order.index(rank)
+
+
+def analyzeHand(hand):
+    order = "23456789TJQKA"
+    r = []
+    s = []
+    for card in hand:
+        r.append(card[0])
+        s.append(card[1])
+    rCount = [r.count(i) for i in r]
+    r.sort(key=pokerSort)
+    a = 0
+    if "".join(r) in order or "".join(r) == "A2345" and 5 in s:
+        a = 11
+    elif 4 in rCount:
+        a = 10
+    elif 3 in rCount and 2 in rCount:
+        a = 9
+    elif 5 in s:
+        a = 8
+    elif "".join(r) in order or "".join(r) == "A2345":
+        a = 7
+    elif 3 in rCount and rCount.count(1) == 2:
+        a = 6
+    elif rCount.count(2) == 4:
+        a = 5
+    elif rCount.count(2) == 2:
+        a = 4
+    else:
+        a = 3
+    return a - 3, r
+
+
+def compareHand(hand1, hand2):
+    r1 = []
+    r2 = []
+    a1 = analyzeHand(hand1)
+    a2 = analyzeHand(hand2)
+    if a1[0] > a2[0]:
+        return 1
+    if a2[0] > a1[0]:
+        return 0
+    if a1[0] == a2[0]:
+        r1 = list(set([(pokerSort(str(i)), a1[1].count(i)) for i in a1[1]]))
+        r2 = list(set([(pokerSort(str(i)), a2[1].count(i)) for i in a2[1]]))
+        r1.sort(key=lambda x: (x[1], (x[0])), reverse=True)
+        r2.sort(key=lambda x: (x[1], (x[0])), reverse=True)
+        for idx in range(len(r1)):
+            c1 = r1[idx]
+            c2 = r2[idx]
+            if c1 == c2:
+                continue
+            if c1[0] > c2[0]:
+                return 1
+            return 0

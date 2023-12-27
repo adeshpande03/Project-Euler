@@ -16,19 +16,20 @@ def main():
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23"""
     ls = []
     for i in t.split("\n"):
-        ls.append(list(map(int, (i.split(' ')))))
+        ls.append(list(map(int, (i.split(" ")))))
     current_sums = []
     for row in ls:
         len_previous = len(current_sums)
         current_sums = [
-            max(0 if pos >= len_previous else current_sums[pos],
-                current_sums[pos - 1] if 0 < pos <= len_previous else 0)
+            max(
+                0 if pos >= len_previous else current_sums[pos],
+                current_sums[pos - 1] if 0 < pos <= len_previous else 0,
+            )
             + cell_value
             for pos, cell_value in enumerate(row)
         ]
 
     print(max(current_sums))
-    
 
 
 if __name__ == "__main__":
