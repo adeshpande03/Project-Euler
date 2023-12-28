@@ -6,12 +6,10 @@ from euler_utils import (
     generateOctagonalList,
     generateSquareList,
 )
-from pprint import pprint
 from itertools import permutations
 
 
 def main():
-    il = []
     t = generateTriangularList(150)
     s = generateSquareList(102)
     p = generatePentagonalList(85)
@@ -24,12 +22,6 @@ def main():
     h = [str(i) for i in h]
     hp = [str(i) for i in hp]
     o = [str(i) for i in o]
-    t1 = generateTriangularList(150)
-    s1 = generateSquareList(102)
-    p1 = generatePentagonalList(85)
-    h1 = generateHexagonallList(75)
-    hp1 = generateHeptagonalList(65)
-    o1 = generateOctagonalList(60)
 
     def checkInOrder(*args):
         il = []
@@ -102,12 +94,11 @@ def main():
                                                                                 )
         return il
 
-    for i in permutations([t, s, p, h, hp, o], 6):
+    for i in permutations([t, s, p, h, hp, o]):
         cO = checkInOrder(*i)
         if cO:
             cO = [str(i) for i in cO[0]] + [str(cO[0][0])]
             if all([cO[i].startswith(cO[i - 1][-2:]) for i in range(1, len(cO))]):
-                cO = cO
                 break
     print(sum(map(int, list(cO[:-1]))))
 
