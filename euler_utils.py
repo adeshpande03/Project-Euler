@@ -179,12 +179,24 @@ def generateTriangularList(listLen):
     return [n * (n + 1) // 2 for n in range(1, listLen + 1)]
 
 
+def generateSquareList(listLen):
+    return [((n) * n) for n in range(1, listLen)]
+
+
 def generatePentagonalList(listLen):
     return [((3 * n - 1) * n) // 2 for n in range(1, listLen)]
 
 
 def generateHexagonallList(listLen):
     return [((2 * n - 1) * n) for n in range(1, listLen)]
+
+
+def generateHeptagonalList(listLen):
+    return [n * (5 * n - 3) // 2 for n in range(1, listLen + 1)]
+
+
+def generateOctagonalList(listLen):
+    return [((3 * n - 2) * n) for n in range(1, listLen)]
 
 
 def listPrimes2(num):
