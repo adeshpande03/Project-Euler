@@ -280,3 +280,13 @@ def compareHand(hand1, hand2):
             if c1[0] > c2[0]:
                 return 1
             return 0
+
+
+def gcd(p, q):
+    while q != 0:
+        p, q = q, p % q
+    return p
+
+
+def isCoprime(a, b):
+    return gcd(a, b) == 1

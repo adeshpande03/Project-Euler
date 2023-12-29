@@ -7,9 +7,9 @@ def main():
     numPrimes = 3
     n = 4
     while True:
-        if numPrimes/n < .1:
+        if numPrimes / n < 0.1:
             print(i - 2)
-            break    
+            break
         i += 2
         n += 4
         if isPrime(i**2):
@@ -19,5 +19,7 @@ def main():
         if isPrime(i**2 - 2 * i + 2):
             numPrimes += 1
         if isPrime(i**2 - 3 * i + 3):
-            numPrimes += 1  
+            numPrimes += 1
+
+
 main()

@@ -4,7 +4,6 @@ import math
 import euler_utils as utils
 
 
-
 def main():
     il = []
     a = 0

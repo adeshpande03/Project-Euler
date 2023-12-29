@@ -1,4 +1,6 @@
 from euler_utils import isPali
+
+
 def main():
     c = 0
     for num in range(10000):
@@ -9,7 +11,6 @@ def main():
         else:
             c += 1
     print(c)
-        
 
 
 main()

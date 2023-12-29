@@ -11,13 +11,12 @@ def main(n):
         oner, onec = diag1Start
         twor, twoc = diag2Start
         s += spiral[oner][onec]
-        s+= spiral[twor][twoc]
+        s += spiral[twor][twoc]
         diag1Start = [oner + 1, onec + 1]
         diag2Start = [twor + 1, twoc - 1]
-        
+
     s -= 1
     print(s)
-    
 
 
 if __name__ == "__main__":

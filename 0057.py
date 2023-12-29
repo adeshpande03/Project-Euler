@@ -1,6 +1,7 @@
 from fractions import Fraction
 import sys
 
+
 def main():
     sys.setrecursionlimit(5000)
     s = "1 + Fraction(1, 2)"
@@ -13,6 +14,8 @@ def main():
         t = str(eval(s))
         t = t.split("/")
         if len(t[0]) > len(t[1]):
-            c +=1
+            c += 1
     print(c)
+
+
 main()

@@ -8,8 +8,6 @@ def main():
                 c += int(num)
             m = max(m, c)
     print(m)
-                
-            
 
 
 main()

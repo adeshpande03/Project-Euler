@@ -1,5 +1,6 @@
 from functools import *
 
+
 @cache
 def c(n):
     if n == 0:
@@ -10,9 +11,11 @@ def c(n):
         return 2
     else:
         if n % 2:
-            return 1 + c(3*n + 1)
+            return 1 + c(3 * n + 1)
         else:
-            return 1 + c(n//2)
+            return 1 + c(n // 2)
+
+
 def main():
     m = 0
     cm = 0
@@ -20,9 +23,9 @@ def main():
         if c(i) > cm:
             cm = c(i)
             m = i
-    
-    
+
     print(m)
-    
+
+
 if __name__ == "__main__":
     main()

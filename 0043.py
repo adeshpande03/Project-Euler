@@ -10,7 +10,6 @@ def main():
         if all([int(i[idx : idx + 3]) % nums[idx - 1] == 0 for idx in range(1, 8)]):
             il.append(int(i))
     print(sum(il))
-            
 
 
 main()

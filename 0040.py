@@ -7,4 +7,6 @@ def main():
         print(n[c])
         s *= int(n[c])
     print(s)
+
+
 main()

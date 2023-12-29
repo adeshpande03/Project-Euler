@@ -5,5 +5,6 @@ def main():
             if len(str(a**b)) == b:
                 c += 1
     print(c)
-    
+
+
 main()

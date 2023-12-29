@@ -1,4 +1,6 @@
 from euler_utils import generatePentagonalList
+
+
 def main():
     pents = generatePentagonalList(10000)
     pset = set(pents)
@@ -7,6 +9,6 @@ def main():
             if pents[i] + pents[j] in pset and pents[j] - pents[i] in pset:
                 print(pents[j] - pents[i])
                 break
-    
+
 
 main()
