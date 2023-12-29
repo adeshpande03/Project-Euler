@@ -8,8 +8,7 @@ def main():
             if n * 3 < d:
                 continue
             c.add(Fraction(n, d))
-    c = list(sorted(c))
-    print(len(c) - c.index(Fraction(1, 3)) - 2)
+    print(len(c) - 2)
 
 
 main()
