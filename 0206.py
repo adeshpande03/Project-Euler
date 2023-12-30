@@ -14,7 +14,7 @@ def main():
                 and s[14] == "8"
                 and s[16] == "9"
             ):
-                print(i )
+                print(i)
                 break
         i += 1
 
