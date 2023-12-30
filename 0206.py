@@ -2,7 +2,7 @@ def main():
     i = 10**9
     while True:
         s = str(i**2)
-        if len(s) > 18:
+        if len(s) > 16:
             if (
                 s[0] == "1"
                 and s[2] == "2"
@@ -13,9 +13,8 @@ def main():
                 and s[12] == "7"
                 and s[14] == "8"
                 and s[16] == "9"
-                and s[18] == "0"
             ):
-                print(i)
+                print(i )
                 break
         i += 1
 
