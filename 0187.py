@@ -6,7 +6,7 @@ from itertools import combinations_with_replacement
 def main():
     d = 0
     p = listPrimes2(10**7 * 5)
-    print()
+
     for i in range(len(p)):
         if p[i] ** 2 > 10**8:
             break
