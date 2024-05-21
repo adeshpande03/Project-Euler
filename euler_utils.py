@@ -290,3 +290,27 @@ def gcd(p, q):
 
 def isCoprime(a, b):
     return gcd(a, b) == 1
+
+
+def totient(n):
+    result = 1
+    for i in range(2, n):
+        if gcd(i, n) == 1:
+            result += 1
+    return result
+
+
+def isIncreasing(num):
+    n = str(num)
+    incNum = str("".join(sorted(n)))
+    return incNum == n
+
+
+def isDecreasing(num):
+    n = str(num)
+    decNum = str("".join(sorted(n)))[::-1]
+    return decNum == n
+
+
+def isBouncy(num):
+    return (not isDecreasing(num)) and (not isIncreasing(num))

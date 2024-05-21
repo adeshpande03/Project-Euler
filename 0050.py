@@ -1,8 +1,8 @@
-from euler_utils import isPrime, listPrimes
+from euler_utils import isPrime, listPrimes2
 
 
 def main():
-    primes = listPrimes(1000001)
+    primes = listPrimes2(1000001)
     pset = set(primes)
     rm = 0
     for i in range(len(primes) - 1, 1, -1):
